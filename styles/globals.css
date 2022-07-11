@@ -1,16 +1,578 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+
+    .allBlogs{
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        /* background-color: #F6FBF4; */
+        margin: 0px 200px 20px ;
+    }
+
+    .search_{
+        margin: 10px;
+        margin-left: 30%;
+        width: 60%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .input_search{
+
+        width:65%;
+        height: 40px;
+        border: 0.5px solid black;
+        /* background-color: #F6FBF4; */
+        border-radius: 2px;
+        padding-left: 10px;
+    }
+    .input_search:focus{
+        outline: none;
+    }
+
+    .search_right{
+        background: #11cdd4;
+
+        background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+
+        -webkit-border-radius: 8;
+
+        -moz-border-radius: 8;
+
+        border-radius: 8px;
+
+        font-family: 'Montserrat', sans-serif;
+
+        color: #ffffff;
+
+        font-size: 20px;
+
+        padding: 2px 10px 2px 10px;
+
+        text-decoration: none;
+
+        margin-left: 20px;
+
+        border: none;
+    }
+
+    .search_right:hover{
+        background: #30e3cb;
+
+        background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+
+        background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+
+        background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+
+        background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+
+        background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+
+
+        text-decoration: none;
+    }
+
+    .singleBlog{
+        display: flex;
+        flex-direction: column;
+        border: none;
+        /* align-items: center; */
+        justify-content: space-around;
+        margin: 30px auto;
+        padding-bottom: 4px;
+        width: 300px;
+    }
+
+    .singleBlogButtons{
+        display: flex; 
+        margin-left: 180px; 
+        margin-top: 8px;     
+    }
+
+    .Heading_{
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .deleteBlog{
+        background-color: white; 
+        border: none;
+        color: black;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-right: 10px;
+        border: 1px solid black;
+        /* background: #11cdd4;
+
+        background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+
+        background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+
+        -webkit-border-radius: 8;
+
+        -moz-border-radius: 8;
+
+        border-radius: 8px;
+
+        font-family: 'Montserrat', sans-serif;
+
+        color: #ffffff;
+
+        font-size: 20px;
+
+        padding: 1px 10px 1px 10px;
+
+        text-decoration: none;
+
+        margin-left: 20px;
+
+        border: none; */
+
+    }
+
+    .deleteBlog:hover{
+        color: white;
+        background-color: black; /* Green */
+
+    }
+
+    .singleBlog_afterclick{
+        margin: 50px 200px 50px 200px;
+        line-height: 2;
+        text-align: justify;
+    }
+
+    .Blog-row{
+        width: 100%;
+        padding: 0 50px 0 50px;
+    }
+
+    .blog_heading_{
+        padding-left: 50px;
+        padding-bottom: 30px;
+    }
+
+    .blog_image{
+        padding-right: 30px;
+        padding-left: 0px;
+        float: left;
+    }
+
+    .blog-parh{
+       
+    }
+
+    .editBlog{
+        background-color: white; 
+        border: none;
+        color: black;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border: 1px solid black;
+    }
+
+    .editBlog:hover{
+        color: white;
+        background-color: black; /* Green */
+
+    }
+
+       body{
+        background-color: #eaf6f6;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+       }
+
+       .height{
+        height: 100vh;
+       }
+
+       .card{
+        border:none;
+        padding: 20px;
+        background-color:white;
+        color: #fff;
+
+       }
+
+       .circle{
+
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:#5855e7;
+        color: #fff;
+        font-size: 10px;
+        border-radius: 50%;
+       }
+
+       .form-input{
+
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+       }
+
+       .form-input i{
+
+            position: absolute;
+            font-size: 18px;
+            top: 15px;
+            left: 10px;
+       }
+
+       .form-control{
+
+        height: 50px;
+        background-color:white;
+        text-indent: 24px;
+        font-size: 15px;
+
+
+       }
+
+       .form-control:focus{
+
+        /* background-color: #25272a; */
+        box-shadow: none;
+        color:black;
+        border-color: none;
+       }
+
+       .form-check-label{
+        margin-top: 2px;
+        font-size: 14px;
+       }
+
+
+       .Log_in_button
+       {
+           margin-top: 10px;
+           background: #11cdd4;
+           background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+           background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+       
+           background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+       
+           background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+       
+           background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+       
+           -webkit-border-radius: 8;
+       
+           -moz-border-radius: 8;
+       
+           border-radius: 8px;
+       
+           font-family: 'Montserrat', sans-serif;
+       
+           color: #ffffff;
+       
+           font-size: 20px;
+       
+           padding: 5px 5px 5px 5px;
+       
+           text-decoration: none;
+       
+           border: none;
+       }
+       
+       .Log_in_button:hover{
+           background: #30e3cb;
+       
+           background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+       
+           text-decoration: none;
+           border: none;
+       }
+
+        .loginheading
+        {
+            font-family: 'Merriweather','serif';
+            color: #66BFBF;
+            font-size: 40px;
+        }
+
+        .Alreadyacust
+        {
+            color:black;
+        }
+
+        
+
+
+.AddText
+{
+    height:200px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.AddButton
+{
+    margin-top: 10px;
+    background: #11cdd4;
+    background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+
+    background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+
+    background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+
+    background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+
+    -webkit-border-radius: 8;
+
+    -moz-border-radius: 8;
+
+    border-radius: 8px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    padding: 5px 5px 5px 5px;
+
+    text-decoration: none;
+
+    border: none;
 }
 
-* {
-  box-sizing: border-box;
+.AddButton:hover{
+    background: #30e3cb;
+
+    background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+
+    background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+
+    background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+
+    background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+
+    background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+
+    text-decoration: none;
+    border: none;
 }
+
+@media screen and (min-width:750px) {
+    .AddBlog_Box
+    {
+        margin:48px 70px;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .AddBlog_Box
+    {
+        margin:10px 10px;
+        padding: 20px !important;;
+    }
+  }
+
+
+  .total{
+    background-color: #FFF;
+    
+}
+
+.sp_headingname{
+    margin-left: 40px;
+    font-size: 3vw;
+    color: #66BFBF;
+    font-family: 'Scaramento', cursive;
+}
+
+.LoginSignUp
+{
+    padding: 60px;
+    padding-left: 40px;
+    margin-bottom: 40px;
+}
+
+.AddButton
+{
+    width:80px;
+    background-color: #5855e7;
+}
+
+.Styles_Login
+{
+    padding-right:20px;
+    color:black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.Styles_SignIn
+{
+    padding-right: 20px;
+    color:black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.log_sign{
+    margin-right: 40px;
+    color: black;
+    font-weight: 400;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+
+       body{
+        background-color: #eaf6f6;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+       }
+
+       .height{
+        height: 100vh;
+       }
+
+       .card{
+        border:none;
+        padding: 20px;
+        background-color:white;
+        color: #fff;
+
+       }
+
+
+       .form-input{
+
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+       }
+
+       .form-input i{
+
+            position: absolute;
+            font-size: 18px;
+            top: 15px;
+            left: 10px;
+       }
+
+       .form-control{
+
+        height: 50px;
+        background-color:white;
+        text-indent: 24px;
+        font-size: 15px;
+
+
+       }
+
+       .form-control:focus{
+
+        /* background-color: #25272a; */
+        box-shadow: none;
+        color:black;
+        border-color: none;
+       }
+
+       .form-check-label{
+        margin-top: 2px;
+        font-size: 14px;
+       }
+
+
+       .Sign_up_button
+       {
+           margin-top: 10px;
+           background: #11cdd4;
+           background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+           background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+       
+           background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+       
+           background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+       
+           background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+       
+           -webkit-border-radius: 8;
+       
+           -moz-border-radius: 8;
+       
+           border-radius: 8px;
+       
+           font-family: 'Montserrat', sans-serif;
+       
+           color: #ffffff;
+       
+           font-size: 20px;
+       
+           padding: 5px 5px 5px 5px;
+       
+           text-decoration: none;
+       
+           border: none;
+       }
+       
+       .Sign_up_button:hover{
+           background: #30e3cb;
+       
+           background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+       
+           background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+       
+           text-decoration: none;
+           border: none;
+       }
+
+        .loginheading_
+        {
+            font-family: 'Merriweather','serif';
+            color: #66BFBF;
+            font-size: 38px;
+        }
+
+        .Alreadyacust
+        {
+            color:black;
+        }
+        .Alreadyacust1
+        {
+            text-decoration: none;
+            font-size:20px;
+            color:#66BFBF;
+        }
